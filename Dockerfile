@@ -12,6 +12,10 @@ RUN mkdir -p /data/nginx/www
 RUN mkdir -p /data/nginx/etc
 RUN mkdir -p /data/nginx/logs
 
+# INJECT CUSTOM NGINX CONFIG
+COPY container-files/etc/nginx/ /data/nginx/etc/
+
+# CREATE VOLUMES
 VOLUME ["/data/nginx/www"]
 VOLUME ["/data/nginx/etc"]
 VOLUME ["/data/nginx/logs"]
