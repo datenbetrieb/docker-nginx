@@ -4,7 +4,7 @@ MAINTAINER Peter Niederlag "peter.niederlag@datenbetrieb.de"
 
 RUN apt-get update && \
     apt-get install -y nginx-full && \
-    apt-get get clean && \
+    apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
 # DATA VOLUMES
