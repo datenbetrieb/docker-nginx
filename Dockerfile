@@ -8,17 +8,14 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 # MKDIR VOLUME DIRECTORIES
-RUN mkdir -p /data/nginx/www
-RUN mkdir -p /data/nginx/etc
-RUN mkdir -p /data/nginx/logs
-
+RUN mkdir -p /data/www/
+RUN mkdir -p /data/etc/nginx/sites-enabled
 # INJECT CUSTOM NGINX CONFIG
-COPY container-files/etc/nginx/ /data/nginx/etc/
+#COPY container-files/etc/nginx/ /data/nginx/etc/
 
 # CREATE VOLUMES
-VOLUME ["/data/nginx/www"]
-VOLUME ["/data/nginx/etc"]
-VOLUME ["/data/nginx/logs"]
+VOLUME ["/data/www"]
+VOLUME ["/data/etc/nginx/sites-enabled"]
 
 # PORTS
 EXPOSE 80
