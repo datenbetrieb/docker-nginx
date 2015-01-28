@@ -7,10 +7,11 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-# DATA VOLUMES
-RUN mkdir -p /data/nginx/www/
-RUN mkdir -p /data/nginx/etc/
-RUN mkdir -p /data/nginx/logs/
+# MKDIR VOLUME DIRECTORIES
+RUN mkdir -p /data/nginx/www
+RUN mkdir -p /data/nginx/etc
+RUN mkdir -p /data/nginx/logs
+
 VOLUME ["/data/nginx/www"]
 VOLUME ["/data/nginx/etc"]
 VOLUME ["/data/nginx/logs"]
