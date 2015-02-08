@@ -11,11 +11,9 @@ RUN apt-get update && \
 RUN mkdir -p /data/www/
 RUN mkdir -p /data/etc/nginx/sites-enabled
 # INJECT CUSTOM NGINX CONFIG
-#COPY container-files/etc/nginx/ /data/nginx/etc/
 
 # CREATE VOLUMES
 VOLUME ["/data/www"]
-VOLUME ["/data/etc/nginx/sites-enabled"]
 
 # PORTS
 EXPOSE 80
