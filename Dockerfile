@@ -14,6 +14,7 @@ RUN mkdir -p /data/etc/nginx/sites-enabled
 
 # CREATE VOLUMES
 VOLUME ["/data/www"]
+VOLUME ["/etc/nginx/sites-enabled"]
 
 # PORTS
 EXPOSE 80
