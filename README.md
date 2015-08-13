@@ -1,5 +1,8 @@
-WIP
-==================
+Nginx docker image(WIP)
+===========================
+
+This is a tiny debian based docker image which contains nginx
+the default config is kept, except the default enabled site being deleted
 
 this repo contains config files for nginx which get copied to volume /data/nginx/etc
 
@@ -8,7 +11,7 @@ this repo's changelog should provide proper information.
 
 
 DEVELOPMENT
-==================
+---------------------------
 
 - update config-files based on debian defaults
 
