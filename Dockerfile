@@ -7,14 +7,13 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-# MKDIR VOLUME DIRECTORIES
-RUN mkdir -p /data/www/
-RUN mkdir -p /data/etc/nginx/sites-enabled
-# INJECT CUSTOM NGINX CONFIG
+# forward request and error logs to docker log collector
+RUN ln -sf /dev/stdout /var/log/nginx/access.log
+RUN ln -sf /dev/stderr /var/log/nginx/error.log
 
 # CREATE VOLUMES
-VOLUME ["/data/www"]
-VOLUME ["/etc/nginx/sites-enabled"]
+#VOLUME ["/data/www"]
+#VOLUME ["/etc/nginx/sites-enabled"]
 
 # PORTS
 EXPOSE 80
