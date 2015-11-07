@@ -1,22 +1,14 @@
 Nginx docker image(WIP)
 ===========================
 
-This is a tiny debian based docker image which contains nginx
-the default config is kept, except the default enabled site being deleted
+This is a debian based docker image with nginx.
+nginx is installed via official package from debian apt repositories.
 
-this repo contains config files for nginx which get copied to volume /data/nginx/etc
+currently build for debian jessie release
 
-config files are based of debian's default configs with slight adaptions for docker, 
-this repo's changelog should provide proper information.
+log files are connected to stdout/stderr for easy of use with docker
 
-
-DEVELOPMENT
+Misc
 ---------------------------
 
-- update config-files based on debian defaults
-
-docker build .
-// capture the container id in $CONTAINER_ID
-docker run --rm -ti -v $(pwd)/container-files/etc/nginx:/data/nginx/etc $(CONTAINER_ID) /bin/bash
-// inside container
-cp -a /etc/nginx/* /data/nginx/etc/.
+This is still proof of concept and might be subject to change without backwards compat in mind. If you want to change this get involved and provide feedback to help stabilize the build process.
