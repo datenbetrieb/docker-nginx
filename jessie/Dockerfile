@@ -11,9 +11,13 @@ RUN apt-get update && \
 RUN ln -sf /dev/stdout /var/log/nginx/access.log
 RUN ln -sf /dev/stderr /var/log/nginx/error.log
 
-# CREATE VOLUMES
-#VOLUME ["/data/www"]
-#VOLUME ["/etc/nginx/sites-enabled"]
+ADD nginx.conf /etc/nginx/
+
+#RUN rm /etc/nginx/sites-enabled/default
+
+RUN echo "upstream php-upstream { server php:9000; }" > /etc/nginx/conf.d/upstream.conf
+
+#RUN usermod -u 1000 www-data
 
 # PORTS
 EXPOSE 80
