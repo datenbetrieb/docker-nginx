@@ -17,7 +17,8 @@ ADD nginx.conf /etc/nginx/
 
 #RUN echo "upstream php-upstream { server php:9000; }" > /etc/nginx/conf.d/upstream.conf
 
-#RUN usermod -u 1000 www-data
+# make www-data use the uid 1000, makes interop with perms more easy
+RUN usermod -u 1000 www-data
 
 # PORTS
 EXPOSE 80
